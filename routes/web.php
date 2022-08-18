@@ -46,4 +46,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::put('/post-update/{slug}', [JobsController::class, 'update'])->name('post.update');
     Route::get('/post-delete/{id}', [JobsController::class, 'destroy'])->name('post.delete');
     Route::get('/dashboard', [PageController::class, 'jobshow'])->name('dashboard');
+
+    //Messenger
+    Route::group(['prefix' => 'messages'], function () {
+        Route::get('/', ['as' => 'messages', 'uses' => '\App\Http\Controllers\MessagesController@index']);
+        Route::get('create', ['as' => 'messages.create', 'uses' => '\App\Http\Controllers\MessagesController@create']);
+        Route::post('/', ['as' => 'messages.store', 'uses' => '\App\Http\Controllers\MessagesController@store']);
+        Route::get('{id}', ['as' => 'messages.show', 'uses' => '\App\Http\Controllers\MessagesController@show']);
+        Route::put('{id}', ['as' => 'messages.update', 'uses' => '\App\Http\Controllers\MessagesController@update']);
+    });
 });
+
+

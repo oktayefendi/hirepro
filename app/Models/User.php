@@ -9,10 +9,14 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Cmgmyr\Messenger\Traits\Messagable;
+
+
 
 class User extends Authenticatable
 {
 
+    use Messagable;
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
@@ -68,6 +72,9 @@ class User extends Authenticatable
         return $this->hasMany(Jobs::class);
     }
 
-    
+
+
+
+
 }
 

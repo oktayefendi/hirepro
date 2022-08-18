@@ -14,7 +14,8 @@
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Dashboard</a>
+          <a class="navbar-brand" href="#">Dashboard </a>
+
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -27,14 +28,17 @@
                 <a class="nav-link" href="#">All Jobs</a>
               </li>
               <li class="nav-item">
+              <a href="/messages">Messages @include('messenger.unread-count')</a>
+            </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#">Profile</a>
               </li>
-         
+
             </ul>
           </div>
         </div>
       </nav>
-     
+
     @yield('content')
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
